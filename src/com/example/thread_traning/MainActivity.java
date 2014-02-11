@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-	
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -20,7 +18,7 @@ public class MainActivity extends Activity {
 		TextView textview = new TextView(MainActivity.this);
 		AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 		LoadUrlRunnable load = new LoadUrlRunnable(new URLTask(builder,textview));
- 		load.run();
+ 		new Thread(load).start();
 	}
 
     
